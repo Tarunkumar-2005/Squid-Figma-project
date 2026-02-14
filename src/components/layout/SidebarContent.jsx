@@ -35,14 +35,13 @@ const SidebarContent = ({ onNavigate }) => {
                         Settings
                     </NavLink>
                 </Nav.Item>
+                <Nav.Item>
+                    <div className="nav-link text-danger" style={{ cursor: 'pointer' }} onClick={() => { handleNavClick(); logout(); }}>
+                        <i className="bi bi-box-arrow-right me-2"></i>
+                        Sign out
+                    </div>
+                </Nav.Item>
             </Nav>
-            <hr />
-            <div className="dropdown">
-                <button className="btn btn-link text-decoration-none text-danger w-100 text-start" onClick={() => { handleNavClick(); logout(); }}>
-                    <i className="bi bi-box-arrow-right me-2"></i>
-                    Sign out
-                </button>
-            </div>
         </div>
     );
 };
