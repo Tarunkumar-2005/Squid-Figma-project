@@ -1,0 +1,209 @@
+// Custom Bootstrap overrides
+$card-border-radius: 1rem;
+$btn-border-radius: 2rem;
+$primary: #ff5757;
+
+// Initial body variables (Default Dark)
+$body-bg: #000000;
+$body-color: #ffffff;
+
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+// Theme Mixins
+@mixin theme-light {
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --card-bg: #ffffff;
+    --card-border: #dee2e6;
+    --input-bg: #ffffff;
+    --input-border: #ced4da;
+    --input-color: #212529;
+    --sidebar-bg: #ffffff;
+    --sidebar-text: #6c757d;
+    --sidebar-hover: #e9ecef;
+    --sidebar-active-text: #0d6efd;
+}
+
+@mixin theme-dark {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --card-bg: #111111;
+    --card-border: #333333;
+    --input-bg: #222222;
+    --input-border: #444444;
+    --input-color: #ffffff;
+    --sidebar-bg: #0a0a0a;
+    --sidebar-text: #a0a0a0;
+    --sidebar-hover: rgba(255, 255, 255, 0.1);
+    --sidebar-active-text: #ffffff;
+}
+
+// Global Styles
+:root {
+    @include theme-light; // Default
+}
+
+[data-theme="dark"] {
+    @include theme-dark;
+}
+
+body {
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+// Sidebar Styles
+.sidebar {
+    min-height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    background-color: var(--sidebar-bg);
+
+    .nav-link {
+        color: var(--sidebar-text);
+        margin-bottom: 0.5rem;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+
+        &:hover,
+        &.active {
+            background-color: var(--sidebar-hover);
+            color: var(--sidebar-active-text);
+        }
+    }
+}
+
+// Common Component Overrides using CSS Variables
+.card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--card-border);
+}
+
+.table {
+    color: var(--text-color);
+    border-color: var(--card-border);
+}
+
+.form-control {
+    background-color: var(--input-bg);
+    border-color: var(--input-border);
+    color: var(--input-color);
+
+    &:focus {
+        background-color: var(--input-bg);
+        color: var(--input-color);
+        border-color: #8e44ad;
+        box-shadow: 0 0 0 0.25rem rgba(142, 68, 173, 0.25);
+    }
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+    color: var(--text-color);
+}
+
+.btn-close {
+    filter: invert(1);
+
+    [data-theme="light"] & {
+        filter: none;
+    }
+}
+
+// --- Specific Styles (Squid Theme / Landing Page) ---
+// These usually should stay dark or specific to landing, but can override if needed.
+// For now, we enforce dark theme on Landing Page regardless of preference if desired,
+// OR we let it adapt. Assuming Landing Page is explicitly "Squid" (Dark) themed.
+
+.landing-page {
+    position: relative;
+    background-color: #000; // Force dark for landing
+    color: #fff;
+    min-height: 100vh;
+
+    .navbar {
+        background: transparent !important;
+        padding-top: 2rem;
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.7) !important;
+
+            &:hover {
+                color: #fff !important;
+            }
+        }
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+
+        @media (min-width: 992px) {
+            font-size: 4.5rem;
+        }
+    }
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #ff7eb3 0%, #8e44ad 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(90deg, #ff7eb3 0%, #8e44ad 100%);
+    border: none;
+    color: white;
+
+    &:hover {
+        background: linear-gradient(90deg, #ff5f9e 0%, #7d3c98 100%);
+        color: white;
+    }
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glow-orb {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(142, 68, 173, 0.4) 0%, rgba(0, 0, 0, 0) 70%);
+    z-index: -1;
+    filter: blur(50px);
+
+    &.orb-1 {
+        top: -50px;
+        left: 10%;
+    }
+
+    &.orb-2 {
+        bottom: 10%;
+        right: 5%;
+        background: radial-gradient(circle, rgba(255, 126, 179, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+    }
+
+    &.orb-3 {
+        top: 40%;
+        left: 40%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(74, 144, 226, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    }
+}
