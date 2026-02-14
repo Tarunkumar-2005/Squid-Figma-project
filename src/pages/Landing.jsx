@@ -21,12 +21,8 @@ const Landing = () => {
                         <i className="bi bi-list fs-2"></i>
                     </Navbar.Toggle>
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mx-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="/signup">Features</Nav.Link>
-                            <Nav.Link href="/signup">Pricing</Nav.Link>
-                        </Nav>
-                        <div className="d-flex align-items-center gap-3">
+        
+                        <div className="ms-auto d-flex align-items-center gap-3">
                             <Link to="/login" className="text-decoration-none text-white small opacity-75 hover-opacity-100">Login</Link>
                             <Link to="/signup">
                                 <Button className="bg-gradient-primary border-0 px-4 py-2 rounded-pill shadow-lg">
@@ -54,7 +50,7 @@ const Landing = () => {
                         <div className="position-relative d-inline-block">
                             <Link to="/signup">
                                 <Button className="bg-gradient-primary border-0 px-5 py-3 rounded-pill fs-5 mb-5 shadow-lg position-relative z-2">
-                                    Download template
+                                    Login for Download template
                                 </Button>
                             </Link>
                             {/* Decorative element for '198 Hug' tag from image */}

@@ -1,4 +1,4 @@
-# SaaS Landing + Dashboard Assignment
+# Squid Figma - SaaS Landing + Dashboard Assignment
 
 This project is a React-based SaaS application featuring a public landing page, authentication system, and a protected dashboard with user management and settings.
 
@@ -35,6 +35,14 @@ This project is a React-based SaaS application featuring a public landing page, 
 5.  **Settings Page**:
     -   Profile settings form.
     -   **Dark/Light Theme Toggle** (persisted in `localStorage`).
+
+## 🖼 Screenshots
+
+### 🏠 Landing Page
+![Landing Page](screenshots/landing.png)
+
+### 📊 Dashboard
+![Dashboard](screenshots/dashboard.png)
 
 ## Setup Instructions
 
