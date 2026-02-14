@@ -76,7 +76,7 @@ const Users = () => {
                     <Col md={6}>
                         <Input
                             id="search-users"
-                            placeholder="Search by name or email..."
+                            placeholder="Search users..."
                             value={searchTerm}
                             onChange={(e) => {
                                 setSearchTerm(e.target.value);
