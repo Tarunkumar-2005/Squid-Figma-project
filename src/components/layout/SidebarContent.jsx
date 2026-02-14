@@ -11,7 +11,7 @@ const SidebarContent = ({ onNavigate }) => {
     };
 
     return (
-        <div className="d-flex flex-column h-100">
+        <div className="d-flex flex-column h-100 p-3">
             <Link to="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none" onClick={handleNavClick}>
                 <span className="fs-4 fw-bold text-gradient">Squid</span>
             </Link>

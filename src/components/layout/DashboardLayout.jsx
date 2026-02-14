@@ -20,7 +20,7 @@ const DashboardLayout = ({ children }) => {
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title className="text-gradient fw-bold">Squid</Offcanvas.Title>
                 </Offcanvas.Header>
-                <Offcanvas.Body>
+                <Offcanvas.Body className="d-flex flex-column p-0">
                     <SidebarContent onNavigate={handleClose} />
                 </Offcanvas.Body>
             </Offcanvas>
